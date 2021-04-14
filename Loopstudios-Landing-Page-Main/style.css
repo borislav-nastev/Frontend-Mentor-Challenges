@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --dark-gray: hsl(0, 0%, 55%);
+    --very-dark-gray: hsl(0, 0%, 41%);
+}
+
+*, 
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Alata', sans-serif;
+    overflow-x: hidden;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+button {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+button {
+    display: block;
+}
+
+.section_title {
+    color: var(--black);
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1em 0;
+}
+
+/* HEADER */
+.header {
+    min-height: 500px;
+    background-image: url('./images/mobile/image-hero.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.nav_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    z-index: 100;
+}
+
+.nav_items {
+    position: absolute;
+    background-color: var(--black);
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 250ms ease-in;
+    z-index: 10;
+}
+
+.nav_items.active {
+    transform: translateX(0%);
+    padding: 10rem 2.5rem;
+}
+
+.nav_item {
+    margin-bottom: 2em;
+}
+
+.nav_item a {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.burger {
+    cursor: pointer;  
+}
+
+.burger div {
+    height: 2px;
+    width: 25px;
+    background-color: var(--white);
+    margin: .4em;
+    border-radius: 1px;
+    z-index: 100;
+    position: relative;
+}
+
+.burger.active div:first-child{
+    transform: rotate(45deg);
+    transform-origin: 5px 7px;
+}
+
+.burger.active div:nth-child(2){
+    opacity: 0;
+}
+
+.burger.active div:nth-child(3){
+    transform: rotate(-45deg);
+    transform-origin: 7px -3px;
+}
+
+.title {
+    border: 1px solid var(--white);
+    padding: 2.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title h1 {
+    color: var(--white);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+/* HEADER END */
+
+.main_container {
+    width: 85%;
+    margin: 6em auto;
+}
+
+/* ACTIVITY */
+.activity_section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7em;
+}
+
+.activity_info {
+    order: 2;
+}
+
+.activity_subs {
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--dark-gray);
+}
+
+.activity_hero {
+    width: 100%;
+    height: 250px;
+    background-image: url('./images/mobile/image-interactive.jpg');
+    background-size: cover;
+    background-position: center;
+}
+/* ACTIVITY END */
+
+/* CREATIONS */
+.creation {
+    height: 120px;
+    margin-bottom: 2em;
+    position: relative;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.creation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.creation:hover::after {
+    opacity: .7;
+}
+
+.creation a {
+    color: var(--white);
+    font-size: 2rem;
+    text-transform: uppercase;
+    width: 110px;
+    display: inline-block;
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    z-index: 100;
+    transition: color 250ms ease-in;
+}
+
+.creation:hover a {
+    color: var(--black);
+}
+
+.earth {
+    background-image: url('./images/mobile/image-deep-earth.jpg');
+}
+
+.arcade {
+    background-image: url('./images/mobile/image-night-arcade.jpg');
+}
+
+.soccer {
+    background-image: url('./images/mobile/image-soccer-team.jpg');
+}
+
+.grid {
+    background-image: url('./images/mobile/image-grid.jpg');
+}
+
+.from_above {
+    background-image: url('./images/mobile/image-from-above.jpg');
+}
+
+.borealis {
+    background-image: url('./images/mobile/image-pocket-borealis.jpg');
+}
+
+.curiosity {
+    background-image: url('./images/mobile/image-curiosity.jpg');
+}
+
+.fisheye {
+    background-image: url('./images/mobile/image-fisheye.jpg');
+}
+
+.btn {
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    background-color: transparent;
+    border: 1px solid var(--black);
+    padding: .8em 2.5em;
+    margin: 0 auto;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 250ms ease-in;
+}
+
+.btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+/* CREATIONS END*/
+
+/* FOOTER */
+.footer {
+    background-color: var(--black);
+}
+
+.footer_container { 
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_logo {
+    margin-bottom: 3em;
+}
+
+.footer_nav_items {
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_nav_item {
+    margin-bottom: 1em;
+    transform: scale(1);
+    transition: transform 250ms ease-in;
+}
+
+.footer_nav_item:hover {
+    transform: scale(1.2);
+}
+
+.footer_nav_item a {
+    font-size: 1.6rem;
+}
+
+.social_media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
+.icons li {
+    transform: scale(1);
+    transition: transform 250ms ease-in;
+}
+
+.icons li:hover {
+    transform: scale(1.2);
+}
+
+.copyright {
+    color: var(--white);
+    font-size: 1.4rem;
+}
+/* FOOTER END */
+
+@media screen and (min-width: 790px) {
+
+    .header {
+        background-image: url('./images/desktop/image-hero.jpg');
+    }
+
+    .nav_items {
+        position: static;
+        background-color: transparent;
+        min-height: auto;
+        width: 60%;
+        transform: translate(0%);
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_item {
+        margin-bottom: 0;
+        transform: scale(1);
+        transition: transform 250ms ease-in;
+        position: relative;
+    }
+
+    .nav_item:hover {
+        transform: scale(1.2);
+    }
+
+    .nav_item::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background-color: var(--white);
+        bottom: -10px;
+        left: calc(50% - 25px);
+        transform: scale(0);
+        transition: transform 350ms ease-in;
+    }
+
+    .nav_item:hover::after {
+        transform: scale(1);
+    }
+
+    .nav_item a {
+        font-size: 2rem;
+        text-transform: capitalize;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .title {
+        width: 40%;
+        max-width: 400px;
+        left: 10%;
+        transform: translate(0%, -50%);
+    }
+
+    .activity_section {
+        display: grid;
+        grid-template-columns: 4fr 1fr 4fr;
+        grid-template-rows: 90px minmax(min-content, 250px);
+    }
+
+    .activity_info {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+        background-color: var(--white);
+        padding: 2em;
+    }
+
+    .activity_hero {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    .activity_subs {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .our_creations {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .creation {
+        width: 48%;
+    }
+
+    .footer_container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3em 7em;
+    }
+
+    .footer_logo {
+        margin-bottom: 1.5em;
+    }
+
+    .footer_nav_items {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+
+    .footer_nav_item {
+        margin-right: 2.5em;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+
+    .header {
+        min-height: 650px;
+        margin-bottom: 9em;
+    }
+
+    .nav_container {
+        padding: 2.5em 9%;
+    }
+
+    .nav_items {
+        width: 50%;
+    }
+
+    .title {
+        max-width: 500px;
+    }
+
+    .title h1 {
+        font-size: 4.8rem;
+    }
+
+    .main_container {
+        width: 80%;
+    }
+
+    .activity_section {
+        grid-template-columns: 5fr 1fr 5fr;
+        grid-template-rows: 120px minmax(min-content, 280px);
+        margin-bottom: 10em;
+    }
+
+    .activity_hero {
+        background-image: url('./images/desktop/image-interactive.jpg');
+        height: 400px;
+    }
+
+    .activity_info {
+        padding: 5em 6em 0 6em;
+    }
+
+    .section_title {
+        margin: 0;
+        font-size: 4rem;
+        margin-bottom: 1em;
+        text-align: left;
+    }
+
+    .activity_subs {
+        font-size: 1.7rem;
+    }
+
+    .creations_section {
+        position: relative;
+    }
+
+    .creation {
+        width: 23%;
+        height: 500px;
+        margin-bottom: 3em;
+    }
+
+    .earth {
+        background-image: url('./images/desktop/image-deep-earth.jpg');
+    }
+    
+    .arcade {
+        background-image: url('./images/desktop/image-night-arcade.jpg');
+    }
+    
+    .soccer {
+        background-image: url('./images/desktop/image-soccer-team.jpg');
+    }
+    
+    .grid {
+        background-image: url('./images/desktop/image-grid.jpg');
+    }
+    
+    .from_above {
+        background-image: url('./images/desktop/image-from-above.jpg');
+    }
+    
+    .borealis {
+        background-image: url('./images/desktop/image-pocket-borealis.jpg');
+    }
+    
+    .curiosity {
+        background-image: url('./images/desktop/image-curiosity.jpg');
+    }
+    
+    .fisheye {
+        background-image: url('./images/desktop/image-fisheye.jpg');
+    }
+
+    .creation a {
+        bottom: 7%;
+        left: 10%;
+    }
+
+    .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .footer_container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 3em 0;
+    }
+
+    .social_media {
+        align-items: flex-end;
+    }
+}
