@@ -1,0 +1,150 @@
+:root {
+    --orange: hsl(31, 77%, 52%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+    --transparentWhite: hsla(0, 0%, 100%, 0.75);
+    --lightGrey: hsl(0, 0%, 95%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1rem;
+    background-color: var(--lightGrey);
+    max-width: 1420px;
+}
+
+.container {
+    width: 80%;
+    margin: 5em auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.orange{
+    background-color: var(--orange);
+}
+
+.dark_cyan {
+    background-color: var(--darkCyan);
+}
+
+.very_dark_cyan {
+    background-color: var(--veryDarkCyan);
+}
+
+.article_container{
+    padding: 4em;
+}
+
+.img_container{
+    margin-bottom: 2rem;
+}
+
+img {
+    width: 25%;
+}
+
+.article_title {
+    font-family: 'Big Shoulders Display', cursive;
+    color: var(--lightGrey);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.article_content {
+    color: var(--transparentWhite);
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    padding: .8em 2.2em;
+    background-color: var(--lightGrey);
+    border: 2px solid transparent;
+    border-radius: 2rem;
+    transition: all 250ms ease;
+}
+
+.link:hover {
+    background-color: transparent;
+    color: var(--lightGrey);
+    border: 2px solid var(--lightGrey);
+}
+
+.orange_link{
+    color: var(--orange);
+}
+
+.dark_cyan_link {
+    color: var(--darkCyan);
+}
+
+.very_dark_cyan_link {
+    color: var(--veryDarkCyan);
+}
+
+@media (min-width: 700px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media (min-width: 900px) {
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .container {
+        width: 90%;
+        display: flex;
+    }
+}
+
+@media (min-width: 1250px) {
+    .container {
+        width: 60%;
+    }
+
+    img {
+        width: 30%;
+    }
+
+    .article_container {
+        padding: 4.5em;
+    }
+
+    .article_title{
+        font-size: 3rem;
+    }
+
+    .article_content {
+        font-size: 1.4rem;
+        margin-bottom: 7rem;
+    }
+
+    .link {
+        font-size: 1.3rem;
+    }
+}
