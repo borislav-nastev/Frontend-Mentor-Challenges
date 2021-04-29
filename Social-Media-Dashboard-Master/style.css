@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --limeGreen: hsl(163, 72%, 41%);
+    --brightRed: hsl(356, 69%, 56%);
+    --facebookBorderColor: hsl(208, 92%, 53%);
+    --twitterBorderColor: hsl(203, 89%, 53%);
+    --instagramBorderColor: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --youtubeBorderColor: hsl(348, 97%, 39%);
+
+    --darkThemeToggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --lightThemeToggle: hsl(230, 22%, 74%);
+
+    --darkThemeBG: hsl(230, 17%, 14%);
+    --darkThemeTopBG: hsl(232, 19%, 15%);
+    --darkThemeCardBG: hsl(228, 28%, 20%);
+    --darkThemeHoverCardBG: hsl(228, 21%, 28%);
+    --darkThemeGrayText: hsl(228, 34%, 66%);
+
+    --white: hsl(0, 0%, 100%);
+
+    --lightThemeBG: hsl(0, 0%, 100%);
+    --lightThemeTopBG: hsl(225, 100%, 98%);
+    --lightThemeCardBG: hsl(227, 47%, 96%);
+    --lightThemeHoverCardBG: hsl(224, 28%, 90%);
+    --lightThemeGrayText: hsl(228, 12%, 44%);
+    --lightThemeDarkText: hsl(230, 17%, 14%);
+
+    --primaryLightThemeShadow: 0 0 6px -4px var(--darkThemeBG);
+    --hoverLightThemeShadow: 0 0 12px -4px var(--darkThemeBG);
+
+    --primaryTransition: all 250ms ease-in;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background-color: var(--lightThemeBG);
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+input[type='checkbox'] {
+    position: relative;
+    width: 42px;
+    height: 22px;
+    appearance: none;
+    border-radius: 11px;
+    background: var(--lightThemeToggle);
+    outline: none;
+}
+
+input[type='checkbox']:hover {
+    cursor: pointer;
+    background: var(--darkThemeToggle);
+}
+
+input[type='checkbox']::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--lightThemeBG);
+    transition: transform 250ms ease-in;
+}
+
+input:checked[type='checkbox'] {
+    background: var(--darkThemeToggle);
+}
+
+input:checked[type='checkbox']::after {
+    transform: translateX(-17px);
+    background-color: var(--darkThemeBG);
+}
+
+/* DARK THEME */
+.dark_theme {
+    background-color: var(--darkThemeBG);
+}
+
+.dark_theme .top_bg{
+    background-color: var(--darkThemeTopBG);
+}
+
+.dark_theme .title_container h1 {
+    color: var(--white);
+}
+
+.dark_theme .title_container p {
+    color: var(--darkThemeGrayText);
+}
+
+.dark_theme .custom_checkbox span {
+    color: var(--white);
+}
+
+.dark_theme .card {
+    background-color: var(--darkThemeCardBG);
+}
+
+.dark_theme .card:hover {
+    background-color: var(--darkThemeHoverCardBG);
+}
+
+.dark_theme .social_media p {
+    color: var(--darkThemeGrayText);
+}
+
+.dark_theme .followers_count {
+    color: var(--white);
+}
+
+.dark_theme .followers_text {
+    color: var(--darkThemeGrayText);
+}
+
+.dark_theme .article_title {
+    color: var(--white);
+}
+
+.dark_theme .today_overview_card {
+    background-color: var(--darkThemeCardBG);
+}
+
+.dark_theme .today_overview_card:hover {
+    background-color: var(--darkThemeHoverCardBG);
+}
+
+.dark_theme .views_text {
+    color: var(--darkThemeGrayText);
+}
+
+.dark_theme .views_count {
+    color: var(--white);
+}
+/* END DARK THEME */
+
+.top_bg {
+    width: 100%;
+    height: 180px;
+    background-color: var(--lightThemeTopBG);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.container {
+    width: 80%;
+    max-width: 390px;
+    margin: -160px auto 0 auto;
+}
+
+.title_container {
+    border-bottom: 1px solid var(--lightThemeGrayText);
+    margin-bottom: 1em;
+}
+
+.title_container h1 {
+    font-size: 2.2rem;
+    color: var(--lightThemeDarkText);
+}
+
+.title_container p {
+    font-size: 1.4em;
+    color: var(--lightThemeGrayText);
+    margin-bottom: 1.5em;
+}
+
+.custom_checkbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.custom_checkbox span {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.cards_container {
+    margin-bottom: 4em;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    background-color: var(--lightThemeCardBG);
+    margin-bottom: 2em;
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0;
+    box-shadow: var(--primaryLightThemeShadow);
+    transition: var(--primaryTransition);
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: var(--lightThemeHoverCardBG);
+    box-shadow: var(--hoverLightThemeShadow);
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+
+.card:first-child::before {
+    background-color: var(--facebookBorderColor);
+}
+
+.card:nth-child(2)::before {
+    background-color: var(--twitterBorderColor);
+}
+
+.card:nth-child(3)::before {
+    background: var(--instagramBorderColor);
+}
+
+.card:last-child::before {
+    background-color: var(--youtubeBorderColor);
+}
+
+.social_media {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.social_media img {
+    margin-right: 1em;
+    width: 25%;
+}
+
+.social_media p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.followers {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.followers_count {
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--lightThemeDarkText);
+}
+
+.followers_text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--lightThemeGrayText);
+    font-size: 1.4rem;
+}
+
+.today_info {
+    display: flex;
+    align-items: center;
+}
+
+.today_info img {
+    margin-right: .5em;
+    width: 7px;
+    height: 5px;
+}
+
+.today_info p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.up {
+    color: var(--limeGreen);
+}
+
+.down {
+    color: var(--brightRed);
+}
+
+.today_overview{
+    margin-bottom: 4em;
+}
+
+.article_title {
+    font-size: 1.8rem;
+    color: var(--lightThemeGrayText);
+    margin-bottom: 1.5em;
+}
+
+.today_overview_card {
+    background-color: var(--lightThemeCardBG);
+    margin-bottom: 2em;
+    box-shadow: var(--primaryLightThemeShadow);
+    transition: var(--primaryTransition);
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.today_overview_card:last-child {
+    margin-bottom: 0;
+}
+
+.today_overview_card:hover {
+    cursor: pointer;
+    background-color: var(--lightThemeHoverCardBG);
+    box-shadow: var(--hoverLightThemeShadow);
+}
+
+.views_text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: var(--lightThemeDarkText);
+}
+
+.views_count {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--lightThemeDarkText);
+}
+
+.percentages_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.percentages_text {
+    display: flex;
+    align-items: center;
+}
+
+.percentages_text img {
+    width: 7px;
+    height: 5px;
+    margin-right: .2em;
+}
+
+.percentages_text p {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        width: 90%;
+        max-width: none;
+    }
+
+    .cards_container,
+    .today_overview_cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
+
+    .card,
+    .today_overview_card {
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .section_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2em;
+    }
+
+    .title_container {
+        border: none;
+        margin: 0;
+    }
+
+    .title_container p {
+        margin: 0;
+    }
+
+    .custom_checkbox {
+        margin: 0;
+    }
+
+    .custom_checkbox span {
+        margin-right: 1em;
+    }
+
+    .cards_container,
+    .today_overview_cards {
+        gap: 3.5em;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .cards_container,
+    .today_overview_cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2em;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    .cards_container,
+    .today_overview_cards {
+        gap: 3em;
+    }
+
+    .card {
+        padding: 3em;
+    }
+
+    .followers_count {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .top_bg {
+        height: 25vh;
+    }
+
+    .container {
+        width: 80%;
+        margin: -22vh auto 0 auto;
+    }
+
+    .section_title {
+        margin-bottom: 4em;
+    }
+
+    .title_container h1 {
+        font-size: 3rem;
+    }
+
+    .title_container p {
+        font-size: 1.6rem;
+    }
+
+    .social_media {
+        margin-bottom: 2.5em;
+    }
+
+    .followers {
+        margin-bottom: 3em;
+    }
+
+    .followers_text {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+    }
+
+    .article_title {
+        font-size: 2.5rem;
+        margin-bottom: 1em;
+    }
+}
